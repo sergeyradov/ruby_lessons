@@ -1,11 +1,5 @@
 
 
-class String
-       def is_i?
-		!!(self =~ /\A[-+]?[0-9]+\z/)
-       end
-end
-
 warningMessage="Please double check the number that you've entered."
 celciusMessage="I have detected temperature in Celcius."
 errorMessage="It looks like you have enter data incorrectly!"
@@ -15,50 +9,29 @@ coldMessage="wow..it's cold."
 print "Please enter temperature in Celcius or Fahrenheit : "
 
 data=gets.chomp!
-unless data.nil? && data.empty? && data.strip.empty?
- value,sign = data.split(' ')
+ 
+if data.nil? or data.strip.empty?
+	puts errorMessage
+	return
+end
 
- p value
- p sign
- puts "Sign nil? #{sign.nil?} " #sign.nil?
- puts "Value nil? #{value.nil?} : "#value.nil?
+value,sign = data.split(' ')
 
- puts "results #{sign.nil? && value.nil?}" 
-
- unless sign.nil? & value.nil?
-
-    unless  sign.empty? & value.empty?
+ unless sign.nil? or value.nil? or sign.empty? or value.empty?
 
      case sign.upcase
      when 'C'	    
 
-       fahrenheitTemp = value.to_i * 1.8 + 32
+       fahrenheitTemp = value.to_f * 1.8 + 32
        puts "This temperature in Fahrenheit : #{fahrenheitTemp} F"
      
      when 'F'    
 
-       celciusTemp = ((value.to_i - 32) / 1.8).round(2)
+       celciusTemp = ((value.to_f - 32) / 1.8).round(2)
        puts "This temperature in Celcius : #{celciusTemp} C"
-     
-     else
-
-	puts errorMessage	
-
+     else 
+	puts errorMessage
      end
-
-    else
-
-        puts errorMessage
-
-    end
-   else
-
-     puts errorMessage
-
-   end
-  
- else
-
-  puts errorMessage
-
-end 
+ else 
+  puts errorMessage	 
+ end
