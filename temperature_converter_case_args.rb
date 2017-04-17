@@ -1,19 +1,10 @@
 
 
-error_message = 'It looks like you have enter data incorrectly!'
 error_miissed_symbol = 'Hoo.. have you entered C or F'
 error_wrong_symbols = 'Hmm... It looks I can\'t convert from this degree.'
 
-print 'Please enter temperature in Celcius or Fahrenheit : '
-
-data = gets.chomp!
-
-if data.nil? || data.strip.empty?
-  puts error_message
-  return
-end
-
-value, sign = data.split(' ')
+value = ARGV[0]
+sign = ARGV[1]
 
 if sign.nil? || value.nil?
   puts error_miissed_symbol
