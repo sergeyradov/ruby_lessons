@@ -1,0 +1,16 @@
+triangle,3,4,5
+circle,20
+triangle,8,4,7
+circle,13
+triangle,7,4,5
+circle,3
+triangle,3,3,3
+circle,7
+triangle,3,3,2
+circle,12
+triangle,2,4,3
+circle,9
+rectangle,4,4
+rectangle,4,2
+rectangle,2,3
+rectangle,6,7
