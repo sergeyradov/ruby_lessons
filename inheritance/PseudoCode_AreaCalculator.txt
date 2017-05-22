@@ -1,0 +1,54 @@
+Area Calculator
+
+
+1. Run application with -f parameter and path to file  (calculator.rb -f pathToFile) or run -s string 'triangle,3,4,2"
+2. If a file parameter is passed 
+	1. take file path and open file
+	2. Read file line by line
+        case a line contains triangle 
+        	parse line and assign triangles sides to variables 
+        		IF a+b>c or a+c>b or b+c > a
+        			trigger triangle area calculation 
+        	    ELSE 
+        	      Throw a message The provided figure is not a triangle
+        	return result
+
+        case a line contains rectangle or square 
+            trigger  Rectangle.area calculation 
+            return result
+
+        case  a line contains circle 
+            trigger  Circle.area calculation 
+            return result
+
+        default 
+           Please verify that files contains figures in following format 
+            (triangel,side1,side2,side3)
+            or 
+            (rectangle/squasre, side1,side2)
+            or circle,radius as side1 / or diametr 
+ ELIF  a string passed (-s values)
+  		case a line contains triangle 
+        	parse line and assign triangles sides to variables 
+        		IF a+b>c or a+c>b or b+c > a
+        			trigger triangle area calculation 
+        	    ELSE 
+        	      Throw a message The provided figure is not a triangle
+        	return result
+
+        case a line contains rectangle or square 
+            trigger  Rectangle.area calculation 
+            return result
+
+        case  a line contains circle 
+            trigger  Circle.area calculation 
+            return result
+
+        default 
+           Please verify that files contains figures in following format 
+            (triangel,side1,side2,side3)
+            or 
+            (rectangle/squasre, side1,side2)
+            or circle,radius as side1 / or diametr 
+ ELSE 
+     Throw a message a worng parameters were passed , show help.            

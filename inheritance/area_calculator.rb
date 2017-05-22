@@ -22,7 +22,6 @@ class Treangle < Figure
 		puts self.class.name
 		#S = √p(p - a)(p - b)(p - c)
 		 p = (a + b + c)*0.5
-#		puts p(p-a)(p-b)(p-c)
 		return Math.sqrt(p*(p-a)*(p-b)*(p-c));
        end
 end
@@ -42,11 +41,10 @@ class Rectangle < Figure
 end
 
 
-treangle=Treangle.new
+file = File.new("figures.txt", "r")
+while (line = file.gets)
+	    puts "#{line}"
+end
+file.close
 
-puts treangle.area
-puts treangle.area 3,4,5
-
-circle=Circle.new
-puts circle.area 5
 
