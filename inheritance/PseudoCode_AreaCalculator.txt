@@ -7,7 +7,7 @@ Area Calculator
 	2. Read file line by line
         case a line contains triangle 
         	parse line and assign triangles sides to variables 
-        		IF a+b>c or a+c>b or b+c > a
+        	    IF a+b>c or a+c>b or b+c > a
         			trigger triangle area calculation 
         	    ELSE 
         	      Throw a message The provided figure is not a triangle
