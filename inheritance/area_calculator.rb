@@ -57,8 +57,8 @@ class Rectangle < Figure
 	     	@side_a = side_a.to_f
 		@side_b = side_b.to_f
 	end
+
 	def area
-#		puts self.class.name
 		return side_a * side_b
 	end
 end
@@ -76,25 +76,21 @@ class FigureReader
 	def calculate_area 
 		while (line = @file.gets)
 	
-			data = line.chomp!.split(',')
+		data = line.chomp!.split(',')
   			
-			figure, *the_rest = data
+		figure, *the_rest = data
 
-			figure.capitalize!
+		figure.capitalize!
 
-			currentFigure = Object.const_get(figure).new(figure, *the_rest)
+		current_figure = Object.const_get(figure).new(figure, *the_rest)
 
-		        puts currentFigure.class.name + " : area " + currentFigure.area.round(1).to_s
+	        puts current_figure.class.name + ' : area ' + current_figure.area.round(1).to_s
 			
-			currentFigure = nil
+		current_figure = nil
 		end
-
-		file.close
-	end
+	file.close
+ end
 end
-
-
-
 
 FigureReader.new('figures.txt').calculate_area
 
